@@ -17,152 +17,59 @@
       --gap: 1.5rem;
       --ff: 'Inter', sans-serif;
     }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: var(--ff);
-      color: var(--clr-text);
-      background: var(--clr-bg);
-      line-height: 1.6;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--ff); color: var(--clr-text); background: var(--clr-bg); line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
-    .container {
-      width: min(90%, 1200px);
-      margin: 0 auto;
-      padding: var(--gap) 0;
-    }
-    header {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: var(--gap) 0;
-    }
-    .logo { font-size: 1.5rem; font-weight: 700; color: var(--clr-primary); }
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
+
+    .container { width: min(90%, 1200px); margin: 0 auto; padding: var(--gap) 0; }
+    header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: var(--gap) 0; }
+    .logo img { height: 100px; }
+    .nav-links { display: flex; gap: var(--gap); }
     .nav-links a:hover { color: var(--clr-secondary); }
-    .btn-primary {
-      background: var(--clr-secondary);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.375rem;
-      font-weight: 600;
-    }
+    .btn-primary { background: var(--clr-secondary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 600; }
     .btn-primary:hover { opacity: 0.9; }
 
     /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      gap: var(--gap);
-      padding: 4rem 0;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--clr-primary);
-    }
-    .hero p {
-      max-width: 600px;
-      font-size: 1.125rem;
-    }
-    .hero img {
-      width: 100%;
-      border-radius: 1rem;
-      object-fit: cover;
-      max-height: 400px;
-    }
+    .hero { display: grid; grid-template-columns: 1fr; align-items: center; gap: var(--gap); padding: 4rem 0; }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; color: var(--clr-primary); }
+    .hero p { max-width: 600px; font-size: 1.125rem; }
+    .hero img { width: 100%; border-radius: 1rem; object-fit: cover; max-height: 400px; }
 
-    /* Sections */
-    section {
-      padding: var(--gap) 0;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: var(--gap);
-      color: var(--clr-primary);
-    }
+    section { padding: var(--gap) 0; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: var(--gap); color: var(--clr-primary); }
+
+    /* Services */
+    #services .cards { display: grid; gap: var(--gap); }
+    .service-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); display: flex; flex-direction: column; }
+    .service-card.highlight { background: var(--clr-primary); color: #fff; }
+    .service-card h3 { margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
 
     /* Projects */
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--gap);
-    }
-    .project-card {
-      background: #fff;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .project-content {
-      padding: var(--gap);
-      flex: 1;
-    }
-    .project-content h3 {
-      margin-top: 0;
-      color: var(--clr-secondary);
-    }
+    #projects .projects { display: grid; gap: var(--gap); }
+    .project-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); }
+    .project-card.highlight { background: var(--clr-primary); color: #fff; }
+    .project-card h3 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+
+    /* Team */
+    #team .projects { display: grid; gap: var(--gap); }
+    #team .project-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin: 0 auto var(--gap); }
+    #team .project-content { padding: var(--gap); text-align: center; }
+    #team .project-content h3 { margin: 0 0 0.5rem; font-size: 1.125rem; }
 
     /* Contact */
-    .contact-form {
-      display: grid;
-      gap: var(--gap);
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #D1D5DB;
-      border-radius: 0.375rem;
-      font-family: var(--ff);
-      font-size: 1rem;
-    }
-    .contact-form button {
-      align-self: start;
-      background: var(--clr-primary);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 0.375rem;
-      font-weight: 600;
-    }
-    .contact-form button:hover {
-      opacity: 0.9;
-    }
+    .contact-form { display: grid; gap: var(--gap); max-width: 500px; margin: 0 auto; }
+    .contact-form input, .contact-form textarea { padding: 0.75rem; border: 1px solid #D1D5DB; border-radius: 0.375rem; font-family: var(--ff); font-size: 1rem; }
+    .contact-form button { align-self: start; background: var(--clr-primary); color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-weight: 600; }
+    .contact-form button:hover { opacity: 0.9; }
 
     /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.875rem;
-      color: #6B7280;
-      padding: var(--gap) 0;
-    }
+    footer { text-align: center; font-size: 0.875rem; color: #6B7280; padding: var(--gap) 0; }
 
     @media (min-width: 768px) {
+      #services .cards { grid-template-columns: repeat(3, 1fr); }
+      #projects .projects, #team .projects { grid-template-columns: repeat(2, 1fr); }
       .hero { grid-template-columns: 1fr 1fr; }
-      .projects { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -171,115 +78,109 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo">der BioIT</a>
-        <div class="nav-links" style="display: flex; align-items: center; gap: 1.5rem;">
-          <a href="#projects" style="line-height: 1;">Projects</a>
-          <a href="#contact" style="line-height: 1;">Contact</a>
-          <a href="#contact" class="btn-primary" style="line-height: 1; display: inline-flex; align-items: center; justify-content: center;">Get Started</a>
+        <a href="#" class="logo"><img src="pictures/logo.svg" alt="der BioIT Logo" /></a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn-primary">Get Started</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section style="
-      background: url('pictures/1.svg') center/cover no-repeat;
-      padding: 6rem 1rem;
-      text-align: center;
-      color: white;
-      position: relative;
-    ">
-      <div style="
-        background: rgba(0, 0, 0, 0.5);  /* dark overlay */
-        padding: 3rem 1rem;
-        max-width: 800px;
-        margin: 0 auto;
-        border-radius: 0.5rem;
-      ">
-        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
-          Custom Bioinformatics Analyses<br>for Research & Clinical Practice
-        </h1>
-        <p style="font-size: 1.125rem; margin-bottom: 2rem;">
-          der BioIT provides tailored, data-driven solutions—from PRS calculation to the integration of genomic approaches in reproductive medicine.
-        </p>
-        <a href="#projects" class="btn-primary">Our Projects</a>
+    <!-- Hero -->
+    <section style="background: url('pictures/1.svg') center/cover no-repeat; padding: 6rem 1rem; text-align: center; color: white; position: relative;">
+      <div style="background: rgba(0,0,0,0.5); padding: 3rem 1rem; max-width: 800px; margin: 0 auto; border-radius: 0.5rem;">
+        <h1>Custom Bioinformatics Analyses<br>for Research & Clinical Practice</h1>
+        <p>der BioIT provides tailored, data-driven solutions—from PRS calculation to genomic integration in reproductive medicine.</p>
+        <a href="#services" class="btn-primary">Our Services</a>
       </div>
     </section>
 
+    <!-- Our Services -->
+    <section id="services" class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="cards">
+        <div class="service-card">
+          <h3>&larr; Pipeline Development</h3>
+          <p>Robust, scalable pipelines built with Nextflow &amp; Snakemake, wrapped in Docker, for reliable results and vibrant workflow visuals.</p>
+        </div>
+        <div class="service-card highlight">
+          <h3>&laquo; Data Analysis</h3>
+          <p>From PRS to machine learning, our analyses are clear, actionable, and quick to iterate—bursting with insights.</p>
+        </div>
+        <div class="service-card">
+          <h3>&#9873; Consulting &amp; Training</h3>
+          <p>Hands-on workshops, colorful dashboards, and strategic consulting to guide your bioinformatics journey.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Featured Projects -->
     <section id="projects" class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Featured Projects</h2>
       <div class="projects">
-        <!-- Project 1 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/600x400.png?text=humess" alt="humess screenshot"/>
+          <h3>&#9776; humess</h3>
+          <p>Ultra-colorful PRS platform turning polygenic risk calculations into interactive charts with real-time APIs.</p>
+        </div>
+        <div class="project-card highlight">
+          <h3>&#10003; Leogene Genomics</h3>
+          <p>Vibrant embryo selection visuals and patient risk profiles for reproductive decision-making.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="container">
+      <h2 class="section-title">Our Team</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="pictures/matvii.png" alt="Matvii Mykhailichenko" />
           <div class="project-content">
-            <h3>humess – PRS Calculation Software</h3>
-            <p>We developed a scalable polygenic risk score (PRS) software solution for humess, enabling the calculation of genetic risk profiles based on GWAS data. The platform features a user-friendly web interface, a containerized backend using Nextflow and Docker, and interactive dashboards for researchers and clinicians.</p>
+            <h3>Matvii Mykhailichenko</h3>
+            <p>Co-Founder & Lead Bioinformatician specializing in diagnostic workflows; educator and open-source contributor.</p>
           </div>
         </div>
-        <!-- Project 2 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/600x400.png?text=Leogene+Project" alt="Leogene project illustration"/>
+          <img src="pictures/dariia.jpg" alt="Daria Nishchenko" />
           <div class="project-content">
-            <h3>Reproductive Medicine with Leogene</h3>
-            <p>In collaboration with the Leogene team, we developed tools for integrating genomic data into reproductive medicine. This included genome sequencing workflows, machine learning models for embryo selection, and personalized treatment planning for improved patient outcomes.</p>
+            <h3>Daria Nishchenko</h3>
+            <p>Co-Founder & Molecular Bioinformatician focusing on structural bioinformatics and STEM outreach.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="pictures/yuliia.jpg" alt="Yuliia Veres" />
+          <div class="project-content">
+            <h3>Yuliia Veres</h3>
+            <p>Software Developer and content creator passionate about data science and international competitions.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="pictures/anna.jpg" alt="Anna Semkiv" />
+          <div class="project-content">
+            <h3>Anna Semkiv</h3>
+            <p>Outreach & HR Lead managing community engagement and Python-based data science education.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="pictures/liliia.jpg" alt="Liliia Yakovyshyna" />
+          <div class="project-content">
+            <h3>Liliia Yakovyshyna</h3>
+            <p>Software Developer intern with interests in biotech, public health, and science communication.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="team" class="container">
-  <h2 class="section-title">Our Team</h2>
-  <div class="projects">
-    <!-- Matvii -->
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Matvii Mykhailichenko – Co-Founder & Lead Bioinformatician</h3>
-        <p>Matvii is a diagnostics bioinformatician at the Medical University of Graz’s Institute for Human Genetics. He specializes in computational solutions for genetic diagnostics and research. Matvii holds a B.Sc. from the University of Wroclaw and is an active contributor to the Bioinformatics for Ukraine initiative, where he teaches and designs course materials. His research interests include single-cell RNA-seq and disease module discovery in rheumatoid arthritis.</p>
-      </div>
-    </div>
-
-    <!-- Daria -->
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Daria Nishchenko – Co-Founder & Molecular Bioinformatician</h3>
-        <p>Daria is a senior undergraduate Biology student at Taras Shevchenko National University of Kyiv, specializing in molecular biology. She works as a researcher at the Institute of Molecular Biology and Genetics NAS of Ukraine, focusing on structural bioinformatics and multifunctional proteins like AIMP1/p43. She is also a mentor and co-founder of UkrTeenScience, promoting STEM outreach among Ukrainian schoolchildren.</p>
-      </div>
-    </div>
-
-    <!-- Yuliia -->
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Yuliia Veres – Software Developer</h3>
-        <p>Yuliia is a promising young researcher from Zakarpattia Oblast, active in Olympiads and international science competitions. She contributes to the Bioinformatics for Ukraine initiative through content creation, and also serves as an Admissions Officer at Ukraine Global Scholars. Her interests span informatics, linguistics, and data science.</p>
-      </div>
-    </div>
-
-    <!-- Anna -->
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Anna Semkiv – Outreach & HR Lead</h3>
-        <p>Anna is a medical student at Bukovinian State Medical University, where she specializes in molecular biology. As co-instructor of the BioDataSci course, she supports teaching in Python-based biological data science. She leads outreach and HR operations at der BioIT, ensuring strong community and academic engagement.</p>
-      </div>
-    </div>
-
-    <!-- Liliia -->
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Liliia Yakovyshyna – Software Developer</h3>
-        <p>Liliia is a student of biotechnology and an intern dental hygienist. She is actively engaged in the Bioinformatics for Ukraine initiative, contributing to development tasks and science communication. Her interests bridge biotechnology, public health, and informatics.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+    <!-- Contact -->
     <section id="contact" class="container">
       <h2 class="section-title">Contact</h2>
       <form class="contact-form" action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required/>
-        <input type="email" name="email" placeholder="Your Email" required/>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
         <button type="submit">Send Message</button>
       </form>
