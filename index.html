@@ -11,7 +11,7 @@
   <style>
     :root {
       --clr-primary: #1E3A8A;
-      --clr-secondary: #10B981;
+      --clr-secondary: #2563EB;
       --clr-bg: #F9FAFB;
       --clr-text: #111827;
       --gap: 1.5rem;
@@ -24,17 +24,18 @@
     .container { width: min(90%, 1200px); margin: 0 auto; padding: var(--gap) 0; }
     header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
     nav { display: flex; align-items: center; justify-content: space-between; padding: var(--gap) 0; }
-    .logo img { height: 100px; }
-    .nav-links { display: flex; gap: var(--gap); }
+    .logo img { max-width: 150px; width: auto; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: var(--gap); }
     .nav-links a:hover { color: var(--clr-secondary); }
-    .btn-primary { background: var(--clr-secondary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 600; }
+    .btn-primary { background: var(--clr-secondary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 600; display: inline-block; }
     .btn-primary:hover { opacity: 0.9; }
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 1fr; align-items: center; gap: var(--gap); padding: 4rem 0; }
-    .hero h1 { font-size: 2.5rem; font-weight: 700; color: var(--clr-primary); }
-    .hero p { max-width: 600px; font-size: 1.125rem; }
-    .hero img { width: 100%; border-radius: 1rem; object-fit: cover; max-height: 400px; }
+    .hero-section { background: url('pictures/1.svg') center/cover no-repeat; padding: 6rem 1rem; text-align: center; color: white; position: relative; }
+    .hero-section .overlay { background: rgba(0,0,0,0.5); padding: 3rem 1rem; max-width: 800px; margin: 0 auto; border-radius: 0.5rem; }
+    .hero-section h1 { font-size: 2.5rem; font-weight: 700; color: white; }
+    .hero-section p { max-width: 600px; font-size: 1.125rem; margin: 1rem auto; }
+    .hero-section .btn-primary { margin-top: 1.5rem; }
 
     section { padding: var(--gap) 0; }
     .section-title { text-align: center; font-size: 2rem; margin-bottom: var(--gap); color: var(--clr-primary); }
@@ -43,13 +44,14 @@
     #services .cards { display: grid; gap: var(--gap); }
     .service-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); display: flex; flex-direction: column; }
     .service-card.highlight { background: var(--clr-primary); color: #fff; }
-    .service-card h3 { margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .service-card h3 { margin: 0 0 0.5rem; font-size: 1.25rem; }
 
-    /* Projects */
+    /* Featured Projects */
     #projects .projects { display: grid; gap: var(--gap); }
-    .project-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); }
+    .project-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); text-align: center; }
     .project-card.highlight { background: var(--clr-primary); color: #fff; }
-    .project-card h3 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .project-card .project-logo { width: 60px; height: 60px; object-fit: contain; margin: 0 auto var(--gap); display: block; }
+    .project-card h3 { margin-top: 0; font-size: 1.25rem; }
 
     /* Team */
     #team .projects { display: grid; gap: var(--gap); }
@@ -60,7 +62,7 @@
     /* Contact */
     .contact-form { display: grid; gap: var(--gap); max-width: 500px; margin: 0 auto; }
     .contact-form input, .contact-form textarea { padding: 0.75rem; border: 1px solid #D1D5DB; border-radius: 0.375rem; font-family: var(--ff); font-size: 1rem; }
-    .contact-form button { align-self: start; background: var(--clr-primary); color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-weight: 600; }
+    .contact-form button { align-self: center; background: var(--clr-primary); color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-weight: 600; }
     .contact-form button:hover { opacity: 0.9; }
 
     /* Footer */
@@ -69,7 +71,7 @@
     @media (min-width: 768px) {
       #services .cards { grid-template-columns: repeat(3, 1fr); }
       #projects .projects, #team .projects { grid-template-columns: repeat(2, 1fr); }
-      .hero { grid-template-columns: 1fr 1fr; }
+      .hero-section .overlay { display: flex; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -91,10 +93,10 @@
 
   <main>
     <!-- Hero -->
-    <section style="background: url('pictures/1.svg') center/cover no-repeat; padding: 6rem 1rem; text-align: center; color: white; position: relative;">
-      <div style="background: rgba(0,0,0,0.5); padding: 3rem 1rem; max-width: 800px; margin: 0 auto; border-radius: 0.5rem;">
-        <h1>Custom Bioinformatics Analyses<br>for Research & Clinical Practice</h1>
-        <p>der BioIT provides tailored, data-driven solutions—from PRS calculation to genomic integration in reproductive medicine.</p>
+    <section class="hero-section">
+      <div class="overlay">
+        <h1>Born in Europe. Built for everyone.</h1>
+        <p><p>We use open-source tools to make personalized medicine more accessible worldwide.</p>
         <a href="#services" class="btn-primary">Our Services</a>
       </div>
     </section>
@@ -104,16 +106,16 @@
       <h2 class="section-title">Our Services</h2>
       <div class="cards">
         <div class="service-card">
-          <h3>&larr; Pipeline Development</h3>
-          <p>Robust, scalable pipelines built with Nextflow &amp; Snakemake, wrapped in Docker, for reliable results and vibrant workflow visuals.</p>
+          <h3>On‑Demand Genome Analysis</h3>
+          <p>$40 per genome with no subscription or license required; rapid, transparent processing on demand.</p>
         </div>
         <div class="service-card highlight">
-          <h3>&laquo; Data Analysis</h3>
-          <p>From PRS to machine learning, our analyses are clear, actionable, and quick to iterate—bursting with insights.</p>
+          <h3>Custom Bioinformatics Solutions</h3>
+          <p>Tailored multi‑omics integration, structural bioinformatics, and machine learning pipelines for your data.</p>
         </div>
         <div class="service-card">
-          <h3>&#9873; Consulting &amp; Training</h3>
-          <p>Hands-on workshops, colorful dashboards, and strategic consulting to guide your bioinformatics journey.</p>
+          <h3>Technical & Strategic Consulting</h3>
+          <p>Expert guidance on pipeline design, workflow optimization, and team training to accelerate discovery.</p>
         </div>
       </div>
     </section>
@@ -123,12 +125,14 @@
       <h2 class="section-title">Featured Projects</h2>
       <div class="projects">
         <div class="project-card">
-          <h3>&#9776; humess</h3>
-          <p>Ultra-colorful PRS platform turning polygenic risk calculations into interactive charts with real-time APIs.</p>
+          <img src="pictures/humess-logo.svg" alt="humess Logo" class="project-logo" />
+          <h3>humess</h3>
+          <p>Interactive PRS platform providing real‑time charts and seamless API integration.</p>
         </div>
         <div class="project-card highlight">
-          <h3>&#10003; Leogene Genomics</h3>
-          <p>Vibrant embryo selection visuals and patient risk profiles for reproductive decision-making.</p>
+          <img src="pictures/leogene-logo.svg" alt="Leogene Genomics Logo" class="project-logo" />
+          <h3>Leogene Genomics</h3>
+          <p><p>WES pipeline to analyse diagnostic samples of paraphin-embedded embryos.</p>
         </div>
       </div>
     </section>
@@ -140,36 +144,43 @@
         <div class="project-card">
           <img src="pictures/matvii.png" alt="Matvii Mykhailichenko" />
           <div class="project-content">
-            <h3>Matvii Mykhailichenko</h3>
-            <p>Co-Founder & Lead Bioinformatician specializing in diagnostic workflows; educator and open-source contributor.</p>
+            <h3>Matvii Mykhailichenko, BSc – CEO & Co-Founder</h3>
+            <p>Diagnostics Bioinformatician at the Institute of Human Genetics, MedUni Graz, Austria. President and Co‑Founder of the Bioinformatics for Ukraine initiative.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="pictures/nadiia.jpg" alt="Nadiia Kasyanchuck" />
+          <div class="project-content">
+            <h3>Nadiia Kasyanchuck, MSc – CTO & Co-Founder</h3>
+            <p>Program Director at KSE and Medical Consultant at Civitta.</p>
           </div>
         </div>
         <div class="project-card">
           <img src="pictures/dariia.jpg" alt="Daria Nishchenko" />
           <div class="project-content">
-            <h3>Daria Nishchenko</h3>
-            <p>Co-Founder & Molecular Bioinformatician focusing on structural bioinformatics and STEM outreach.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="pictures/yuliia.jpg" alt="Yuliia Veres" />
-          <div class="project-content">
-            <h3>Yuliia Veres</h3>
-            <p>Software Developer and content creator passionate about data science and international competitions.</p>
+            <h3>Daria Nishchenko, MSc – CFO & Co-Founder</h3>
+            <p>President and Co-founder of the Bioinformatics for Ukraine.</p>
           </div>
         </div>
         <div class="project-card">
           <img src="pictures/anna.jpg" alt="Anna Semkiv" />
           <div class="project-content">
-            <h3>Anna Semkiv</h3>
-            <p>Outreach & HR Lead managing community engagement and Python-based data science education.</p>
+            <h3>Anna Semkiv, BSc</h3>
+            <p>Outreach & HR Lead managing community programs and bioinformatics education initiatives.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="pictures/yuliia.jpg" alt="Yuliia Veres" />
+          <div class="project-content">
+            <h3>Yuliia Veres, BSc</h3>
+            <p>Lead Software Developer focused on data science tooling and open‑source bioinformatics frameworks.</p>
           </div>
         </div>
         <div class="project-card">
           <img src="pictures/liliia.jpg" alt="Liliia Yakovyshyna" />
           <div class="project-content">
-            <h3>Liliia Yakovyshyna</h3>
-            <p>Software Developer intern with interests in biotech, public health, and science communication.</p>
+            <h3>Liliia Yakovyshyna, Intern</h3>
+            <p>Software Developer Intern driving public health genomics and science communication projects.</p>
           </div>
         </div>
       </div>
