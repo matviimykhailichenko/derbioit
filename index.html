@@ -2,204 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>der BioIT – Custom Bioinformatics Analyses</title>
-
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feather Icons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-
-  <style>
-    :root {
-      --clr-primary: #1E3A8A;
-      --clr-secondary: #2563EB;
-      --clr-bg: #F9FAFB;
-      --clr-text: #111827;
-      --gap: 1.5rem;
-      --ff: 'Inter', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--ff); color: var(--clr-text); background: var(--clr-bg); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    .container { width: min(90%, 1200px); margin: 0 auto; padding: var(--gap) 0; }
-    header { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-    nav { display: flex; align-items: center; justify-content: space-between; padding: var(--gap) 0; }
-    .logo img { max-width: 150px; width: auto; height: auto; }
-    .nav-links { display: flex; align-items: center; gap: var(--gap); }
-    .nav-links a:hover { color: var(--clr-secondary); }
-    .btn-primary { background: var(--clr-secondary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.375rem; font-weight: 600; display: inline-block; }
-    .btn-primary:hover { opacity: 0.9; }
-
-    /* Hero */
-    .hero-section { background: url('pictures/1.svg') center/cover no-repeat; padding: 6rem 1rem; text-align: center; color: white; position: relative; }
-    .hero-section .overlay { background: rgba(0,0,0,0.5); padding: 3rem 1rem; max-width: 800px; margin: 0 auto; border-radius: 0.5rem; }
-    .hero-section h1 { font-size: 2.5rem; font-weight: 700; color: white; }
-    .hero-section p { max-width: 600px; font-size: 1.125rem; margin: 1rem auto; }
-    .hero-section .btn-primary { margin-top: 1.5rem; }
-
-    section { padding: var(--gap) 0; }
-    .section-title { text-align: center; font-size: 2rem; margin-bottom: var(--gap); color: var(--clr-primary); }
-
-    /* Services */
-    #services .cards { display: grid; gap: var(--gap); }
-    .service-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); display: flex; flex-direction: column; }
-    .service-card.highlight { background: var(--clr-primary); color: #fff; }
-    .service-card h3 { margin: 0 0 0.5rem; font-size: 1.25rem; }
-
-    /* Featured Projects */
-    #projects .projects { display: grid; gap: var(--gap); }
-    .project-card { background: #fff; border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: var(--gap); text-align: center; }
-    .project-card.highlight { background: var(--clr-primary); color: #fff; }
-    .project-card .project-logo { width: 60px; height: 60px; object-fit: contain; margin: 0 auto var(--gap); display: block; }
-    .project-card h3 { margin-top: 0; font-size: 1.25rem; }
-
-    /* Team */
-    #team .projects { display: grid; gap: var(--gap); }
-    #team .project-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin: 0 auto var(--gap); }
-    #team .project-content { padding: var(--gap); text-align: center; }
-    #team .project-content h3 { margin: 0 0 0.5rem; font-size: 1.125rem; }
-
-    /* Contact */
-    .contact-form { display: grid; gap: var(--gap); max-width: 500px; margin: 0 auto; }
-    .contact-form input, .contact-form textarea { padding: 0.75rem; border: 1px solid #D1D5DB; border-radius: 0.375rem; font-family: var(--ff); font-size: 1rem; }
-    .contact-form button { align-self: center; background: var(--clr-primary); color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-weight: 600; }
-    .contact-form button:hover { opacity: 0.9; }
-
-    /* Footer */
-    footer { text-align: center; font-size: 0.875rem; color: #6B7280; padding: var(--gap) 0; }
-
-    @media (min-width: 768px) {
-      #services .cards { grid-template-columns: repeat(3, 1fr); }
-      #projects .projects, #team .projects { grid-template-columns: repeat(2, 1fr); }
-      .hero-section .overlay { display: flex; flex-direction: column; align-items: center; }
-    }
-  </style>
 </head>
-
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo"><img src="pictures/logo.svg" alt="der BioIT Logo" /></a>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="#contact" class="btn-primary">Get Started</a>
-        </div>
+<body class="bg-gray-50 text-gray-800 font-inter leading-relaxed">
+  <!-- Header -->
+  <header id="siteHeader" class="bg-white shadow fixed top-0 w-full z-50 transition-transform transform -translate-y-full">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="logo">
+        <img src="pictures/logo.svg" alt="der BioIT Logo" class="h-10" />
+      </a>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#services" class="hover:text-blue-600 transition">Services</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+        <a href="#team" class="hover:text-blue-600 transition">Team</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
       </nav>
+      <div class="flex items-center space-x-4">
+        <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-500 transition">Get Started</a>
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
+    <nav id="mobileMenu" class="hidden bg-white shadow-lg md:hidden">
+      <a href="#services" class="block px-6 py-3 hover:bg-gray-100">Services</a>
+      <a href="#projects" class="block px-6 py-3 hover:bg-gray-100">Projects</a>
+      <a href="#team" class="block px-6 py-3 hover:bg-gray-100">Team</a>
+      <a href="#contact" class="block px-6 py-3 hover:bg-gray-100">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero-section">
-      <div class="overlay">
-        <h1>Born in Europe. Built for everyone.</h1>
-        <p><p>We use open-source tools to make personalized medicine more accessible worldwide.</p>
-        <a href="#services" class="btn-primary">Our Services</a>
+    <!-- Hero Section Fullscreen with Logo -->
+    <section id="hero" class="relative h-screen bg-cover bg-center flex items-center justify-center" style="background-image:url('pictures/1.svg')">
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 space-y-6">
+        <div id="heroLogo" class="w-32 mx-auto animate-fade-in">
+          <img src="pictures/logo.svg" alt="der BioIT Logo" class="w-full" />
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white animate-fade-in">Born in Europe. Built for everyone.</h1>
+        <p class="text-lg md:text-2xl text-gray-200 max-w-2xl animate-fade-in delay-200">We use open-source tools to make personalized medicine more accessible worldwide.</p>
+        <a href="#services" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 transition animate-fade-in delay-400">Our Services</a>
       </div>
     </section>
 
-    <!-- Our Services -->
-    <section id="services" class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="cards">
-        <div class="service-card">
-          <h3>On‑Demand Genome Analysis</h3>
+    <!-- Services Section -->
+    <section id="services" class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">On‑Demand Genome Analysis</h3>
           <p>$40 per genome with no subscription or license required; rapid, transparent processing on demand.</p>
         </div>
-        <div class="service-card highlight">
-          <h3>Custom Bioinformatics Solutions</h3>
+        <div class="bg-blue-800 text-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Custom Bioinformatics Solutions</h3>
           <p>Tailored multi‑omics integration, structural bioinformatics, and machine learning pipelines for your data.</p>
         </div>
-        <div class="service-card">
-          <h3>Technical & Strategic Consulting</h3>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2">Technical & Strategic Consulting</h3>
           <p>Expert guidance on pipeline design, workflow optimization, and team training to accelerate discovery.</p>
         </div>
       </div>
     </section>
 
-    <!-- Featured Projects -->
-    <section id="projects" class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects">
-        <div class="project-card">
-          <img src="pictures/humess-logo.svg" alt="humess Logo" class="project-logo" />
-          <h3>humess</h3>
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Featured Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/humess.png" alt="humess Logo" class="mx-auto h-16 mb-4" />
           <p>Interactive PRS platform providing real‑time charts and seamless API integration.</p>
         </div>
-        <div class="project-card highlight">
-          <img src="pictures/leogene-logo.svg" alt="Leogene Genomics Logo" class="project-logo" />
-          <h3>Leogene Genomics</h3>
-          <p><p>WES pipeline to analyse diagnostic samples of paraphin-embedded embryos.</p>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/leogene.png" alt="Leogene Logo" class="mx-auto h-16 mb-4" />
+          <p>WES pipeline to analyse diagnostic samples of paraffin-embedded embryos.</p>
         </div>
       </div>
     </section>
 
-    <!-- Team -->
-    <section id="team" class="container">
-      <h2 class="section-title">Our Team</h2>
-      <div class="projects">
-        <div class="project-card">
-          <img src="pictures/matvii.png" alt="Matvii Mykhailichenko" />
-          <div class="project-content">
-            <h3>Matvii Mykhailichenko, BSc – CEO & Co-Founder</h3>
-            <p>Diagnostics Bioinformatician at the Institute of Human Genetics, MedUni Graz, Austria. President and Co‑Founder of the Bioinformatics for Ukraine initiative.</p>
-          </div>
+    <!-- Team Section -->
+    <section id="team" class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Our Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/matvii.png" alt="Matvii" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Matvii Mykhailichenko, BSc</h3>
+          <p class="text-blue-700 font-medium">CEO & Co-Founder</p>
+          <p class="text-sm mt-2">Diagnostics Bioinformatician at the Institute of Human Genetics, MedUni Graz. Co-Founder of Bioinformatics for Ukraine.</p>
         </div>
-        <div class="project-card">
-          <img src="pictures/nadiia.jpg" alt="Nadiia Kasyanchuck" />
-          <div class="project-content">
-            <h3>Nadiia Kasyanchuck, MSc – CTO & Co-Founder</h3>
-            <p>Program Director at KSE and Medical Consultant at Civitta.</p>
-          </div>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/nadiia.jpg" alt="Nadiia" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Nadiia Kasyanchuck, MSc</h3>
+          <p class="text-blue-700 font-medium">CTO & Co-Founder</p>
+          <p class="text-sm mt-2">Program Director at KSE and Medical Consultant at Civitta.</p>
         </div>
-        <div class="project-card">
-          <img src="pictures/dariia.jpg" alt="Daria Nishchenko" />
-          <div class="project-content">
-            <h3>Daria Nishchenko, MSc – CFO & Co-Founder</h3>
-            <p>President and Co-founder of the Bioinformatics for Ukraine.</p>
-          </div>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/dariia.jpg" alt="Dariia" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Daria Nishchenko, MSc</h3>
+          <p class="text-blue-700 font-medium">CFO & Co-Founder</p>
+          <p class="text-sm mt-2">President and Co-Founder of the Bioinformatics for Ukraine initiative.</p>
         </div>
-        <div class="project-card">
-          <img src="pictures/anna.jpg" alt="Anna Semkiv" />
-          <div class="project-content">
-            <h3>Anna Semkiv, BSc</h3>
-            <p>Outreach & HR Lead managing community programs and bioinformatics education initiatives.</p>
-          </div>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/anna.jpg" alt="Anna" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Anna Semkiv, BSc</h3>
+          <p class="text-blue-700 font-medium">Head of Communication</p>
+          <p class="text-sm mt-2">Leads outreach & HR, managing community programs and bioinformatics education.</p>
         </div>
-        <div class="project-card">
-          <img src="pictures/yuliia.jpg" alt="Yuliia Veres" />
-          <div class="project-content">
-            <h3>Yuliia Veres, BSc</h3>
-            <p>Lead Software Developer focused on data science tooling and open‑source bioinformatics frameworks.</p>
-          </div>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/yuliia.jpg" alt="Yuliia" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Yuliia Veres, BSc</h3>
+          <p class="text-blue-700 font-medium">Lead Software Developer</p>
+          <p class="text-sm mt-2">Focused on data science tooling and open-source bioinformatics frameworks.</p>
         </div>
-        <div class="project-card">
-          <img src="pictures/liliia.jpg" alt="Liliia Yakovyshyna" />
-          <div class="project-content">
-            <h3>Liliia Yakovyshyna, Intern</h3>
-            <p>Software Developer Intern driving public health genomics and science communication projects.</p>
-          </div>
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <img src="pictures/liliia.jpg" alt="Liliia" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold">Liliia Yakovyshyna</h3>
+          <p class="text-blue-700 font-medium">Software Developer Intern</p>
+          <p class="text-sm mt-2">Supports public health genomics and science communication projects.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="container">
-      <h2 class="section-title">Contact</h2>
-      <form class="contact-form" action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-        <button type="submit">Send Message</button>
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Contact</h2>
+      <form class="max-w-xl mx-auto space-y-4" action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded" />
+        <textarea name="message" rows="5" placeholder="Your Message..." required class="w-full p-3 border border-gray-300 rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition">Send Message</button>
       </form>
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 der BioIT &bull; All rights reserved.
+  <footer class="bg-gray-50 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 der BioIT • All rights reserved.
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Header behavior
+    const header = document.getElementById('siteHeader');
+    const heroLogo = document.getElementById('heroLogo');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.remove('-translate-y-full');
+        heroLogo.classList.add('hidden');
+      } else {
+        header.classList.add('-translate-y-full');
+        heroLogo.classList.remove('hidden');
+      }
+    });
+    feather.replace();
+  </script>
 </body>
 </html>
