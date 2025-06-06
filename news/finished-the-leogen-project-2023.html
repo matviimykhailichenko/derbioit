@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finished the Leogen Project - 2023 - der BioIT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-inter leading-relaxed">
+  <header id="siteHeader" class="bg-white shadow w-full">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="logo">
+        <img src="../pictures/logo.svg" alt="der BioIT Logo" class="h-10" />
+      </a>
+      <nav class="hidden md:flex space-x-8">
+        <a href="../index.html#services" class="hover:text-blue-600 transition">Services</a>
+        <a href="../index.html#projects" class="hover:text-blue-600 transition">Projects</a>
+        <a href="../news.html" class="hover:text-blue-600 transition">News</a>
+        <a href="../index.html#team" class="hover:text-blue-600 transition">Team</a>
+        <a href="../index.html#contact" class="hover:text-blue-600 transition">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a href="../index.html#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-500 transition">Get Started</a>
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobileMenu" class="hidden bg-white shadow-lg md:hidden">
+      <a href="../index.html#services" class="block px-6 py-3 hover:bg-gray-100">Services</a>
+      <a href="../index.html#projects" class="block px-6 py-3 hover:bg-gray-100">Projects</a>
+      <a href="../news.html" class="block px-6 py-3 hover:bg-gray-100">News</a>
+      <a href="../index.html#team" class="block px-6 py-3 hover:bg-gray-100">Team</a>
+      <a href="../index.html#contact" class="block px-6 py-3 hover:bg-gray-100">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-6 py-16">
+    <h1 class="text-3xl font-bold text-center text-blue-800 mb-6">Finished the Leogen Project – 2023</h1>
+    <div class="prose max-w-none mx-auto">
+      <p>We successfully delivered a WES pipeline for analyzing diagnostic samples of paraffin-embedded embryos, providing a robust solution for clinical research.</p>
+    </div>
+  </main>
+
+  <footer class="bg-gray-50 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 der BioIT • All rights reserved.
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    feather.replace();
+  </script>
+</body>
+</html>
